@@ -9,3 +9,9 @@ for(let i = 0 ; i < 256; i++) {
         div.style.backgroundColor = "blue";
     })
 }
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+    let value = prompt("Enter a desired grid size from 1 to 100");
+})
