@@ -33,7 +33,7 @@ function generateGrid(size) {
         container.appendChild(div);
 
         div.addEventListener("mouseenter", () => {
-            div.style.backgroundColor = "blue";
+            div.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
         })
     }
 }
