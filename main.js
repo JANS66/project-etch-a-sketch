@@ -33,9 +33,21 @@ function generateGrid(size) {
         container.appendChild(div);
 
         div.addEventListener("mouseenter", () => {
-            div.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`;
-        })
-    }
-}
+            let rgb;
+
+            if (!div.rgb) {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                rgb = [r, g, b];
+            } else {
+                rgb = div.rgb.map(value => Math.max(0, Math.floor(value * 0.9)));
+            }
+
+            div.rgb = rgb;
+            div.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+        });
+    };
+};
 
 generateGrid(16);
