@@ -8,8 +8,3 @@
     display: flex;
     flex-wrap: wrap;
 }
-
-#container > div {
-    flex: 0 0 6.25%;
-    aspect-ratio: 1 / 1;
-}
